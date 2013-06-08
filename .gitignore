@@ -1,0 +1,10 @@
+/*
+/.*
+!.gitignore
+!.gitconfig
+!.vimrc.*
+!setup.sh
+
+.vim/bundle/
+.vim/.netrwhist
+.vimrc.swp
