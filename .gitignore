@@ -2,7 +2,8 @@
 /.*
 !.gitignore
 !.gitconfig
-!.vimrc.*
+!.vimrc
+!.vimrc*
 !setup.sh
 
 .vim/bundle/
