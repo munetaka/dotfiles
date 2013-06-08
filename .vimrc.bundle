@@ -1,0 +1,68 @@
+ "-------------------------------------------------------------------------------
+ "vunlde.vimで管理してるpluginを読み込む
+ "-------------------------------------------------------------------------------"
+ filetype off
+
+ " if has('vim_starting')
+ "     set runtimepath+=~/.vim/bundle/neobundle.vim
+ "     call neobundle#rc(expand('~/.vim/bundle/'))
+ " endif
+
+ " set rtp+=~/.vim/bundle/vundle/
+ " call vundle#rc()
+
+ " Edit {{{
+
+ " }}}
+
+ " Completion {{{
+
+ " }}}
+
+ " Searching/Moving{{{
+
+ " }}}
+
+ " Programming {{{
+
+ " }}}
+
+ " Syntax {{{
+
+ " }}}
+
+ " Buffer {{{
+
+ " }}}
+
+ " Encording {{{
+ " NeoBundle 'banyan/recognize_charcode.vim'
+ " }}}
+
+ " Utility {{{
+
+ " }}}
+
+ " ColorSchema{{{{
+     " color schema 256
+     " NeoBundle 'desert256.vim'
+     " NeoBundle 'mrkn256.vim'
+     " NeoBundle 'tomasr/molokai'
+     " NeoBundle 'yuroyoro/yuroyoro256.vim'
+ " }}}
+
+ " Unite {{{{
+      " unite.vim : - すべてを破壊し、すべてを繋げ - vim scriptで実装されたanythingプラグイン
+      " NeoBundle 'Shougo/unite.vim'
+      " NeoBundle 'tsukkee/unite-help'
+      " NeoBundle 'h1mesuke/unite-outline'
+      " NeoBundle 'Sixeight/unite-grep'
+      " NeoBundle 'basyura/unite-rails'
+      " NeoBundle 'thinca/vim-unite-history'
+      " NeoBundle 'tsukkee/unite-tag'
+      " NeoBundle 'choplin/unite-vim_hacks'
+ " }}}
+
+ " NeoBundle 'gmarik/vundle'
+
+ filetype plugin indent on
