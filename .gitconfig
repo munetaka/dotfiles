@@ -1,0 +1,24 @@
+[alias]
+	b  = branch
+	br = branch -r
+	ba = branch -a
+	cm = commit -m
+	st = status
+	ch = chckout
+	cb = chckout -b
+[user]
+	name = Munetaka Mizutani
+	email = mu.mizutani@gmail.com
+[color]
+	ui = auto
+    branch    = true
+    status    = true
+    diff      = true
+[color "branch"]
+    current   = green reverse
+    local     = green
+    remote    = yellow
+[color "status"]
+    updated   = yellow
+    changed   = green
+    untracked = cyan
