@@ -1,20 +1,20 @@
 [user]
-	name       = Munetaka Mizutani
-	email      = mu.mizutani@gmail.com
+    name       = Munetaka Mizutani
+    email      = mu.mizutani@gmail.com
 [alias]
-	b          = branch
-	br         = branch -r
-	ba         = branch -a
-	cm         = commit -m
-	st         = status
-	ch         = chckout
-	cb         = chckout -b
+    b          = branch
+    br         = branch -r
+    ba         = branch -a
+    cm         = commit -m
+    st         = status
+    ch         = chckout
+    cb         = chckout -b
     cl         = config -l
     rv         = remote -v
     lo         = log --oneline
     hist       = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [color]
-	ui         = auto
+ui         = auto
     branch     = true
     status     = true
     diff       = true
