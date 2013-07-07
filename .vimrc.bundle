@@ -1,12 +1,13 @@
  "-------------------------------------------------------------------------------
  "vunlde.vimで管理してるpluginを読み込む
  "-------------------------------------------------------------------------------"
+ set nocompatible
  filetype off
 
- " if has('vim_starting')
- "     set runtimepath+=~/.vim/bundle/neobundle.vim
- "     call neobundle#rc(expand('~/.vim/bundle/'))
- " endif
+ if has('vim_starting')
+     set runtimepath+=~/.vim/bundle/neobundle.vim
+     call neobundle#rc(expand('~/.vim/bundle/'))
+ endif
 
  " set rtp+=~/.vim/bundle/vundle/
  " call vundle#rc()
@@ -16,11 +17,20 @@
  " }}}
 
  " Completion {{{
+    " 補完 neocomplcache.vim : 究極のVim的補完環境
+    NeoBundle 'Shougo/neocomplcache'
+    
+    " neocomplcacheのsinpet補完
+    NeoBundle 'Shougo/neosnippet.git'
+    "
+    " various langueages snippets
+    NeoBundle 'honza/snipmate-snippets'
 
  " }}}
 
  " Searching/Moving{{{
-
+     " open-browser.vim : カーソルの下のURLを開くor単語を検索エンジンで検索
+     NeoBundle 'tyru/open-browser.vim'
  " }}}
 
  " Programming {{{
@@ -40,6 +50,23 @@
  " }}}
 
  " Utility {{{
+     " vimshell : vimのshell
+     " NeoBundle 'Shougo/vimshell.git'
+
+     " vimproc : vimから非同期実行。vimshellで必要
+     NeoBundle 'Shougo/vimproc', {
+         \ 'build' : {
+         \     'windows' : 'make -f make_mingw32.mak',
+         \     'cygwin'  : 'make -f make_cygwin.mak',
+         \     'mac'     : 'make -f make_mac.mak',
+         \     'unix'    : 'make -f make_unix.mak'
+         \     },
+         \ }
+
+     " ステータスラインをカッコよくする
+     " NeoBundle 'taichouchou2/alpaca_powertabline'
+     " NeoBundle 'Lokaltog/vim-powerline', { 'rtp' : 'powerline/bindings/vim'}
+     NeoBundle 'Lokaltog/vim-powerline'
 
  " }}}
 
