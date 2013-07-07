@@ -14,7 +14,7 @@
     lo         = log --oneline
     hist       = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
 [color]
-ui         = auto
+    ui         = auto
     branch     = true
     status     = true
     diff       = true
