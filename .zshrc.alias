@@ -1,0 +1,50 @@
+# ls
+case "${OSTYPE}" in
+darwin*)
+    alias ls="ls -GF"
+    alias la="ls -AGF"
+    alias ll="ls -hlGF"
+    alias lla="ls -hlAGF"
+    ;;
+linux*)
+    alias ls='ls -F   --color'
+    alias ll='ls -hlF  --color'
+    alias la='ls -hlAF --color'
+    ;;
+esac
+
+# cd
+alias calcu='dc'
+alias dc='cd ../'
+alias dcc='cd ../../'
+alias dccc='cd ../../../'
+alias dcccc='cd ../../../../'
+alias d='cd -'
+
+# git
+alias g='git'
+alias gst='git status'
+alias gs="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
+alias gb='git branch'
+alias gbr='git branch -r'
+alias gba='git branch -a'
+alias gr='git remote -v'
+alias gpo='git push origin'
+
+# tmux
+alias tmux='tmux -2'
+
+# du
+alias du='du -h'
+
+# df
+alias df='df -h'
+
+# predict
+alias pon='predict-on'
+alias poff='predict-off'
+
+# alias -s
+alias -s php=vim
+alias -s html=vim
+alias -s txt=vim
