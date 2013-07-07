@@ -2,8 +2,10 @@
 /.*
 !.gitignore
 !.gitconfig
+!.tmux.conf
 !.vimrc
 !.vimrc*
+!.zsh*
 !setup.sh
 
 .vim/bundle/
