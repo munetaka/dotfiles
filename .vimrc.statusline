@@ -2,6 +2,7 @@
  " ステータスライン StatusLine
  "-------------------------------------------------------------------------------
  set laststatus=2 " 常にステータスラインを2行表示
+ set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 
  set ruler        "カーソルが何行目の何列目に置かれているかを表示する
 

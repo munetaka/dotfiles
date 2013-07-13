@@ -24,7 +24,7 @@
     NeoBundle 'Shougo/neosnippet.git'
     "
     " various langueages snippets
-    NeoBundle 'honza/snipmate-snippets'
+    " NeoBundle 'honza/snipmate-snippets'
 
  " }}}
 
@@ -64,8 +64,8 @@
          \ }
 
      " ステータスラインをカッコよくする
-     " NeoBundle 'taichouchou2/alpaca_powertabline'
-     " NeoBundle 'Lokaltog/vim-powerline', { 'rtp' : 'powerline/bindings/vim'}
+     "NeoBundle 'taichouchou2/alpaca_powertabline'
+     "NeoBundle 'Lokaltog/powerline'
      NeoBundle 'Lokaltog/vim-powerline'
 
  " }}}
