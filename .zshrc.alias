@@ -23,16 +23,21 @@ alias d='cd -'
 
 # git
 alias g='git'
-alias gst='git status'
-alias gs="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
+alias gad='git add'
 alias gb='git branch'
-alias gbr='git branch -r'
 alias gba='git branch -a'
-alias gr='git remote -v'
+alias gbr='git branch -r'
+alias gc='git checkout'
+alias gcb='git checkout -b'
+alias gcm='git commit -m'
+alias gca='git commit --amend'
+alias gs="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
 alias gpo='git push origin'
+alias gr='git remote -v'
+alias gst='git status'
 
 # tmux
-alias tmux='tmux -2'
+# alias tmux='tmux -2'
 
 # du
 alias du='du -h'
