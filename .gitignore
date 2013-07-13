@@ -3,9 +3,9 @@
 !.gitignore
 !.gitconfig
 !.tmux.conf
-!.vimrc
 !.vimrc*
 !.zsh*
+!bin
 !setup.sh
 
 .vim/bundle/
