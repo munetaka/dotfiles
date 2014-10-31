@@ -271,9 +271,8 @@ compinit -u
 
 ## Prediction configuration
 #
-autoload predict-on
-predict-on
-#predict-off
+#autoload predict-on
+#predict-on
 
 ## terminal configuration
 ##
