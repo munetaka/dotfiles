@@ -34,7 +34,8 @@
  " }}}
 
  " Programming {{{
-
+    " quickrun.vim : 編集中のファイルを簡単に実行できるプラグイン
+    NeoBundle 'thinca/vim-quickrun'
  " }}}
 
  " Syntax {{{
