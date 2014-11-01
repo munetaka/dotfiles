@@ -7,9 +7,10 @@ darwin*)
     alias lla="ls -hlAGF"
     ;;
 linux*)
-    alias ls='ls -F   --color'
-    alias ll='ls -hlF  --color'
-    alias la='ls -hlAF --color'
+    alias ls='ls -F     --color'
+    alias la='ls -AF    --color'
+    alias ll='ls -hlF   --color'
+    alias lla='ls -hlAF --color'
     ;;
 esac
 
@@ -31,10 +32,17 @@ alias gc='git checkout'
 alias gcb='git checkout -b'
 alias gcm='git commit -m'
 alias gca='git commit --amend'
-alias gs="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
+alias gd='git diff'
 alias gpo='git push origin'
+alias gpu='git pull'
+alias gpupu='git pull --prune'
+alias gpuo='git pull origin'
+alias gpupuo='git pull --prune origin'
 alias gr='git remote -v'
+alias gs="git log --date=short --max-count=1 --pretty=format:'%Cgreen%h %cd %Cblue%cn%x09%Creset%s' | tail -1 && echo '' && git status -s -b"
 alias gst='git status'
+alias gsh='git show'
+alias gshb='git show -b'
 
 # tmux
 # alias tmux='tmux -2'
@@ -50,6 +58,7 @@ alias pon='predict-on'
 alias poff='predict-off'
 
 # alias -s
-alias -s php=vim
+#alias -s php=vim
 alias -s html=vim
 alias -s txt=vim
+
