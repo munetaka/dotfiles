@@ -42,3 +42,4 @@
     generic    = G move-last-line
 [core]
 	editor = /usr/bin/vim
+    ignorecase = true
