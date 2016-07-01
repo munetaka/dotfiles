@@ -46,3 +46,4 @@
     pager = lv -c
     preloadindex = true
     fscache = true
+    quotepath = false
