@@ -44,3 +44,5 @@
     editor = /usr/bin/vim
     ignorecase = true
     pager = lv -c
+    preloadindex = true
+    fscache = true
