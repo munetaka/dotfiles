@@ -1,3 +1,10 @@
 # Terminal Colorの設定
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# ariport
+alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
+
+# lsusbもどき
+alias lsusb="system_profiler SPUSBDataType"
+

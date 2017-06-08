@@ -29,116 +29,154 @@ case ${UID} in
     CYAN="%{${fg[cyan]}%}"
     WHITE="%{${fg[white]}%}"
     # POH="( ꒪⌓꒪) $"
-    POH="┌(┌ ^o^)┐ ➜ "
+    POH="┌(┌ ^o^)┐❤ ➜"
 
     #
     # Prompt
     #
-    PROMPT='%{$fg[cyan]%}ⓤ ${USER}@%m ${RESET}${WHITE}${POH} ${RESET}'
+    PROMPT='%{$fg[cyan]%}ⓤ ${USER}⚡%m ${RESET}${WHITE}${POH} ${RESET}'
     RPROMPT='${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)% ${WHITE}]${RESET}'
 
-    #
-    # vi入力モードでPROMPTの色を変える
-    # http://memo.officebrook.net/20090226.html
-    function zle-line-init zle-keymap-select {
-        case $KEYMAP in
-            vicmd)
-            PROMPT='%{$fg[cyan]%}ⓤ ${USER}@%m ${RESET}${WHITE}${POH} ${RESET}'
-            ;;
-            main|viins)
-            PROMPT='%{$fg[blue]%}ⓤ ${USER}@%m ${RESET}${WHITE}${POH} ${RESET}'
-            ;;
-        esac
-        zle reset-prompt
-    }
-    zle -N zle-line-init
-    zle -N zle-keymap-select
+#   #
+#   # vi入力モードでPROMPTの色を変える
+#   # http://memo.officebrook.net/20090226.html
+#   function zle-line-init zle-keymap-select {
+#       case $KEYMAP in
+#           vicmd)
+#           PROMPT='%{$fg[cyan]%}${USER}@%m ${RESET}${WHITE}${POH} ${RESET}'
+#           ;;
+#           main|viins)
+#           PROMPT='%{$fg[blue]%}${USER}@%m ${RESET}${WHITE}${POH} ${RESET}'
+#           ;;
+#       esac
+#       zle reset-prompt
+#   }
+#   zle -N zle-line-init
+#   zle -N zle-keymap-select
 
-    # Show git branch when you are in git repository
-    # http://d.hatena.ne.jp/mollifier/20100906/p1
+#   # Show git branch when you are in git repository
+#   # http://d.hatena.ne.jp/mollifier/20100906/p1
 
-    autoload -Uz add-zsh-hook
-    autoload -Uz vcs_info
+#   autoload -Uz add-zsh-hook
+#   autoload -Uz vcs_info
 
-    zstyle ':vcs_info:*' enable git svn hg bzr
-    zstyle ':vcs_info:*' formats '(%s)-[%b]'
-    zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
-    zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
-    zstyle ':vcs_info:bzr:*' use-simple true
+#   zstyle ':vcs_info:*' enable git svn hg bzr
+#   zstyle ':vcs_info:*' formats '(%s)-[%b]'
+#   zstyle ':vcs_info:*' actionformats '(%s)-[%b|%a]'
+#   zstyle ':vcs_info:(svn|bzr):*' branchformat '%b:r%r'
+#   zstyle ':vcs_info:bzr:*' use-simple true
 
-    autoload -Uz is-at-least
-    if is-at-least 4.3.10; then
-        # この check-for-changes が今回の設定するところ
-        zstyle ':vcs_info:git:*' check-for-changes true
-        zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
-        zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
-        zstyle ':vcs_info:git:*' formats '(%s)-[%c%u%b]'
-        zstyle ':vcs_info:git:*' actionformats '(%s)-[%c%u%b|%a]'
-    fi
+#   autoload -Uz is-at-least
+#   if is-at-least 4.3.10; then
+#       # この check-for-changes が今回の設定するところ
+#       zstyle ':vcs_info:git:*' check-for-changes true
+#       zstyle ':vcs_info:git:*' stagedstr "+"    # 適当な文字列に変更する
+#       zstyle ':vcs_info:git:*' unstagedstr "-"  # 適当の文字列に変更する
+#       zstyle ':vcs_info:git:*' formats '(%s)-[%c%u%b]'
+#       zstyle ':vcs_info:git:*' actionformats '(%s)-[%c%u%b|%a]'
+#   fi
 
-    function _update_vcs_info_msg() {
-        psvar=()
-        LANG=en_US.UTF-8 vcs_info
-        psvar[2]=$(_git_not_pushed)
-        [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-    }
-    add-zsh-hook precmd _update_vcs_info_msg
+#   function _update_vcs_info_msg() {
+#       psvar=()
+#       LANG=en_US.UTF-8 vcs_info
+#       psvar[2]=$(_git_not_pushed)
+#       [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+#   }
+#  add-zsh-hook precmd _update_vcs_info_msg
 
-    # show status of git pushed to HEAD in prompt
-    function _git_not_pushed()
-    {
-        if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
-            head="$(git rev-parse HEAD)"
-            for x in $(git rev-parse --remotes)
-            do
-                if [ "$head" = "$x" ]; then
-                    return 0
-                fi
-            done
-            echo "|?"
-        fi
-        return 0
-    }
+#   # show status of git pushed to HEAD in prompt
+#   function _git_not_pushed()
+#   {
+#       if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" = "true" ]; then
+#           head="$(git rev-parse HEAD)"
+#           for x in $(git rev-parse --remotes)
+#           do
+#               if [ "$head" = "$x" ]; then
+#                   return 0
+#               fi
+#           done
+#           echo "|?"
+#       fi
+#       return 0
+#   }
 
-    # git のブランチ名 *と作業状態* を zsh の右プロンプトに表示＋ status に応じて色もつけてみた - Yarukidenized:ヤルキデナイズド :
-    # http://d.hatena.ne.jp/uasi/20091025/1256458798
-    autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
+#    # git のブランチ名 *と作業状態* を zsh の右プロンプトに表示＋ status に応じて色もつけてみた - Yarukidenized:ヤルキデナイズド :
+#    # http://d.hatena.ne.jp/uasi/20091025/1256458798
+#
+#     autoload -Uz VCS_INFO_get_data_git; VCS_INFO_get_data_git 2> /dev/null
+#
+#    setopt prompt_subst
+#    setopt re_match_pcre
+#
+#    function rprompt-git-current-branch {
+#        local name st color gitdir action pushed
+#        if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
+#            return
+#        fi
+#
+#        name=`git rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
+#        if [[ -z $name ]]; then
+#            return
+#        fi
+#
+#        gitdir=`git rev-parse --git-dir 2> /dev/null`
+#        action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
+#        pushed="`_git_not_pushed`"
+#
+#        st=`git status 2> /dev/null`
+#        if [[ "$st" =~ "(?m)^nothing to" ]]; then
+#            color=%F{green}
+#        elif [[ "$st" =~ "(?m)^nothing added" ]]; then
+#            color=%F{yellow}
+#        elif [[ "$st" =~ "(?m)^# Untracked" ]]; then
+#            color=%B%F{red}
+#        else
+#            color=%F{red}
+#        fi
+#
+#        echo "[$color$name$action$pushed%f%b]"
+#    }
+#
+#    RPROMPT='`rprompt-git-current-branch`${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)${WHITE}]${RESET}'
 
-    setopt prompt_subst
-    setopt re_match_pcre
+    # 上記のpcreが動かないversion用
+    # ${fg[...]} や $reset_color をロード
+    autoload -U colors; colors
 
     function rprompt-git-current-branch {
-        local name st color gitdir action pushed
+        local name st color
+
         if [[ "$PWD" =~ '/\.git(/.*)?$' ]]; then
-            return
+                return
         fi
-
-        name=`git rev-parse --abbrev-ref=loose HEAD 2> /dev/null`
+        name=$(basename "`git symbolic-ref HEAD 2> /dev/null`")
         if [[ -z $name ]]; then
-            return
+                return
         fi
-
-        gitdir=`git rev-parse --git-dir 2> /dev/null`
-        action=`VCS_INFO_git_getaction "$gitdir"` && action="($action)"
-        pushed="`_git_not_pushed`"
-
         st=`git status 2> /dev/null`
-        if [[ "$st" =~ "(?m)^nothing to" ]]; then
-            color=%F{green}
-        elif [[ "$st" =~ "(?m)^nothing added" ]]; then
-            color=%F{yellow}
-        elif [[ "$st" =~ "(?m)^# Untracked" ]]; then
-            color=%B%F{red}
+        if [[ -n `echo "$st" | grep "^nothing to"` ]]; then
+                color=${fg[green]}
+        elif [[ -n `echo "$st" | grep "^nothing added"` ]]; then
+                color=${fg[yellow]}
+        elif [[ -n `echo "$st" | grep "^# Untracked"` ]]; then
+                color=${fg_bold[red]}
         else
-            color=%F{red}
+                color=${fg[red]}
         fi
 
-        echo "[$color$name$action$pushed%f%b]"
+        # %{...%} は囲まれた文字列がエスケープシーケンスであることを明示する
+        # これをしないと右プロンプトの位置がずれる
+        echo "%{$color%}$name%{$reset_color%}"
     }
 
-    RPROMPT='`rprompt-git-current-branch`${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)${WHITE}]${RESET}'
+    # プロンプトが表示されるたびにプロンプト文字列を評価、置換する
+    setopt prompt_subst
 
-    ;;
+#    RPROMPT='[`rprompt-git-current-branch`%~]'
+#    RPROMPT='`rprompt-git-current-branch`${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)${WHITE}]${RESET}'
+    RPROMPT='[`rprompt-git-current-branch`]${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)${WHITE}]${RESET}'
+
+     ;;
 esac
 
 # 指定したコマンド名がなく、ディレクトリ名と一致した場合 cd する
@@ -273,6 +311,7 @@ compinit -u
 #
 #autoload predict-on
 #predict-on
+#predict-off
 
 ## terminal configuration
 ##
@@ -331,3 +370,6 @@ esac
 ## local固有設定
 #
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
+
+
+test -e "${HOME}/.iterm2_shell_integration.zsh-5.0.2" && source "${HOME}/.iterm2_shell_integration.zsh-5.0.2"

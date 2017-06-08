@@ -48,10 +48,10 @@ alias gshb='git show -b'
 # alias tmux='tmux -2'
 
 # du
-alias du='du -h'
+alias duh='du -h'
 
 # df
-alias df='df -h'
+alias dfh='df -h'
 
 # predict
 alias pon='predict-on'
@@ -62,3 +62,5 @@ alias poff='predict-off'
 alias -s html=vim
 alias -s txt=vim
 
+# ssh
+alias ssha='ssh -A'
