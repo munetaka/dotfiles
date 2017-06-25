@@ -47,3 +47,5 @@
     preloadindex = true
     fscache = true
     quotepath = false
+[includeIf "gitdir:~/"]
+    path = .gitconfig.local
