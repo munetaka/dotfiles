@@ -1,6 +1,6 @@
  #!/bin/bash
 
- DOT_FILES=( .zshrc .zshrc.alias .zshrc.osx .gitconfig .gitignore .vimrc .tmux.conf )
+ DOT_FILES=( .zshrc .zshrc.alias .zshrc.osx .gitconfig .gitignore .vimrc .tmux.conf .flake8)
 
  for file in ${DOT_FILES[@]}
  do
