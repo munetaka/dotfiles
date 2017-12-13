@@ -26,6 +26,12 @@ repo = 'Shougo/neocomplcache'
 repo = 'Shougo/neosnippet.git'
 
 [[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+
+[[plugins]]
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
