@@ -372,4 +372,4 @@ esac
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 
-test -e "${HOME}/.iterm2_shell_integration.zsh-5.0.2" && source "${HOME}/.iterm2_shell_integration.zsh-5.0.2"
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
