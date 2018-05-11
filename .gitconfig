@@ -49,3 +49,5 @@
     quotepath = false
 [includeIf "gitdir:~/"]
     path = .gitconfig.local
+[pager]
+    branch = false
