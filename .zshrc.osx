@@ -8,3 +8,5 @@ alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Cu
 # lsusbもどき
 alias lsusb="system_profiler SPUSBDataType"
 
+# avr-gcc
+export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"
