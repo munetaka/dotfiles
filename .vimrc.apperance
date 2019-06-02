@@ -14,7 +14,7 @@ set ttyfast           " 高速ターミナル接続を行う
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 
-" カレントウィンドウにのみ罫線を引く
+" カレントウィンドウのみカーソルハイライトを有効
 augroup cch
     autocmd! cch
     autocmd WinLeave * set nocursorline
@@ -22,7 +22,5 @@ augroup cch
 augroup END
 
 " カーソルハイライトでもアンダーバーが見やすいようにする
-hi clear CursorLine
-hi CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
-
+highlight clear CursorLine
+highlight CursorLine gui=underline ctermbg=black guibg=black
