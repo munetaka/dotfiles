@@ -20,6 +20,9 @@ hook_post_update = '''
 repo = 'Lokaltog/vim-powerline'
 
 [[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
 repo = 'Shougo/neocomplcache'
 
 [[plugins]]
