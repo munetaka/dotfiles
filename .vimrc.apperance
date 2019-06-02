@@ -21,6 +21,7 @@ augroup cch
     autocmd WinEnter,BufRead * set cursorline
 augroup END
 
+" カーソルハイライトでもアンダーバーが見やすいようにする
 hi clear CursorLine
 hi CursorLine gui=underline
 highlight CursorLine ctermbg=black guibg=black
