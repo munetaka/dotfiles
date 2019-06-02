@@ -15,7 +15,7 @@ source ~/dotfiles/.vimrc.apperance
 "補完関連
 source ~/dotfiles/.vimrc.completion
 "Tags関連
-source ~/dotfiles/.vimrc.tags
+" source ~/dotfiles/.vimrc.tags
 "検索関連
 source ~/dotfiles/.vimrc.search
 "移動関連
