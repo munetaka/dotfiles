@@ -3,9 +3,9 @@
 "-------------------------------------------------------------------------------
 set cursorline        " カーソル行をハイライト
 set display=uhex      " 印字不可能文字を16進数で表示
+set lazyredraw        " コマンド実行中は再描画しない
 set list              " 不可視文字表示
 set number            " 行番号表示
-set lazyredraw        " コマンド実行中は再描画しない 
 set showmatch         " 括弧の対応をハイライト
 set ttyfast           " 高速ターミナル接続を行う
 
