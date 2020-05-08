@@ -1,11 +1,10 @@
 "vunlde.vimで管理してるpluginを読み込む
 "source ~/dotfiles/.vimrc.bundle
 
-"dein.vimで管理してるpluginを読み込む
-source ~/dotfiles/.vimrc.dein
-
 "基本設定
 source ~/dotfiles/.vimrc.basic
+"dein.vimで管理してるpluginを読み込む
+source ~/dotfiles/.vimrc.dein
 "StatusLine設定
 source ~/dotfiles/.vimrc.statusline
 "インデント設定

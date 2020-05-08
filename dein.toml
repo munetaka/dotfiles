@@ -40,8 +40,11 @@ depends = [
   'nvim-yarp',
   'vim-hug-neovim-rpc',
 ]
-# Defx -split=vertical -winwidth=40 -direction=topleft -show-ignored-files
 hook_add = '''
+  nnoremap [defx] <Nop>
+  nmap <Leader>f [defx]
+  nnoremap <silent> [defx]f :<C-u>Defx -split=vertical -winwidth=40 -direction=topleft -show-ignored-files<CR>
+
   call defx#custom#column('icon', {
       \ 'directory_icon': '▸',
       \ 'opened_icon': '▾',
@@ -69,9 +72,11 @@ hook_add = '''
       nnoremap <silent><buffer><expr> p
       \ defx#do_action('paste')
       nnoremap <silent><buffer><expr> l
-      \ defx#do_action('open')
+      \ defx#do_action('drop')
+      nnoremap <silent><buffer><expr> t
+      \ defx#do_action('drop', 'tabnew')
       nnoremap <silent><buffer><expr> E
-      \ defx#do_action('open', 'vsplit')
+      \ defx#do_action('drop', 'vsplit')
       nnoremap <silent><buffer><expr> P
       \ defx#do_action('open', 'pedit')
       nnoremap <silent><buffer><expr> o
@@ -107,7 +112,7 @@ hook_add = '''
       \ defx#do_action('cd')
       nnoremap <silent><buffer><expr> q
       \ defx#do_action('quit')
-      nnoremap <silent><buffer><expr> <Space>
+      nnoremap <silent><buffer><expr> s
       \ defx#do_action('toggle_select') . 'j'
       nnoremap <silent><buffer><expr> *
       \ defx#do_action('toggle_select_all')
