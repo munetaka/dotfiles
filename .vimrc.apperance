@@ -2,7 +2,7 @@
 " 表示 Apperance
 "-------------------------------------------------------------------------------
 set cursorline        " カーソル行をハイライト
-set display=uhex      " 印字不可能文字を16進数で表示
+set display+=uhex     " 印字不可能文字を16進数で表示 (for binary files.)
 set display+=lastline " 長い行を表示
 set lazyredraw        " コマンド実行中は再描画しない
 set list              " 不可視文字表示
