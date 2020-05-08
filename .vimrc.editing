@@ -5,8 +5,6 @@
 nnoremap ; :
 nnoremap : ;
 
-nnoremap Y y$
-
 if &term =~ "xterm"
   let &t_SI .= "\e[?2004h"
   let &t_EI .= "\e[?2004l"
