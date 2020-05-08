@@ -20,6 +20,9 @@ hook_post_update = '''
 repo = 'Lokaltog/vim-powerline'
 
 [[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
 repo = 'Shougo/neocomplcache'
 
 [[plugins]]
