@@ -65,3 +65,9 @@ alias -s txt=vim
 
 # ssh
 alias ssha='ssh -A'
+
+# @igor_chubin
+alias we='curl wttr.in'
+
+# covid
+alias covid='curl https://corona-stats.online'
