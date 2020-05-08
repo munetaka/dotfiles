@@ -10,3 +10,4 @@ alias lsusb="system_profiler SPUSBDataType"
 
 # avr-gcc
 export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"
+export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
