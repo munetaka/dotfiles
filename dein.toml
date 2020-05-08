@@ -240,3 +240,6 @@ hook_add = '''
 
 [[plugins]]
 repo    = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
