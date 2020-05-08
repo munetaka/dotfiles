@@ -28,13 +28,13 @@ case ${UID} in
     RED="%{${fg[red]}%}"
     CYAN="%{${fg[cyan]}%}"
     WHITE="%{${fg[white]}%}"
-    # POH="( ꒪⌓꒪) $"
-    POH="┌(┌ ^o^)┐❤ ➜"
+    POH="➜"
 
     #
     # Prompt
     #
-    PROMPT='%{$fg[cyan]%}ⓤ ${USER}⚡%m ${RESET}${WHITE}${POH} ${RESET}'
+    # PROMPT='%{$fg[cyan]%}ⓤ ${USER}⚡%m ${RESET}${WHITE}${POH} ${RESET}'
+    PROMPT='%{$fg[cyan]%}${USER} ${RESET}${WHITE}${POH} ${RESET}'
     RPROMPT='${RESET}${WHITE}[${BLUE}%(5~,%-2~/.../%2~,%~)% ${WHITE}]${RESET}'
 
 #   #
