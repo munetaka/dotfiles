@@ -29,3 +29,10 @@ augroup END
 " カーソルハイライトでもアンダーバーが見やすいようにする
 highlight clear CursorLine
 highlight CursorLine gui=underline ctermbg=black guibg=black
+
+" 行末の空白文字をハイライト
+augroup HighlightTrailingSpaces
+  autocmd!
+  autocmd VimEnter,WinEnter,ColorScheme * highlight TrailingSpaces term=underline guibg=Red ctermbg=Red
+  autocmd VimEnter,WinEnter * match TrailingSpaces /\s\+$/
+augroup END
