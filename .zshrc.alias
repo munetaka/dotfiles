@@ -73,3 +73,6 @@ alias weh="curl wttr.in/:help"
 
 # covid
 alias covid='curl https://corona-stats.online'
+
+# cold
+alias gold='curl http://btc.rate.sx/paxg@10d'
