@@ -1,12 +1,11 @@
+# alias
+alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
+alias lsusb="system_profiler SPUSBDataType"
+alias date=gdate
+
 # Terminal Colorの設定
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
-
-# ariport
-alias airport=/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport
-
-# lsusbもどき
-alias lsusb="system_profiler SPUSBDataType"
 
 # avr-gcc
 export PATH="/usr/local/opt/avr-gcc@7/bin:$PATH"
