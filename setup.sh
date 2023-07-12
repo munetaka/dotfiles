@@ -7,7 +7,42 @@
      ln -s $HOME/dotfiles/$file $HOME/$file
  done
 
+# make locla setting file
  touch ~/.zshrc.local
+
+ # setup posetry
+ curl -sSL https://install.python-poetry.org | python3 -
+# set alias like poetry='/Users/munetakamizutani/Library/Python/3.9/bin/poetry'
 
  # install oh-my-zsh
  # [! -d ~/.oh-my-zsh ] && git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+brew install \
+    arp-scan\
+    boostnote\
+    dropbox\
+    gh\
+    gibo\
+    git\
+    gnu-sed\
+    google-chrome\
+    htop\
+    httpie
+    iproute2mac\
+    iterm2\
+    jq\
+    jesseduffield/lazygit/lazygit\
+    lv\
+    obsidian\
+    neovim\
+    nmap\
+    pyenv\
+    sequel-pro\
+    sequel-ace\
+    shellcheck\
+    skitch\
+    tig\
+    tmux\
+    tree\
+    vim\
+    wget\
