@@ -278,6 +278,7 @@ nmap <ESC><ESC> ;nohlsearch<CR><ESC>
 " https://zenn.dev/ryo_kawamata/articles/improve-neovmi-terminal
 " command! -nargs=* T split | wincmd j | resize 10 | terminal <args>
 command! -nargs=* T split | wincmd j | resize <args> | terminal
+autocmd TermOpen * startinsert " always open Terminal in insert mode
 
 
 "-------------------------------------------------------------------------------
