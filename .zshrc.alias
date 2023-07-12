@@ -67,12 +67,18 @@ alias -s txt=vim
 alias ssha='ssh -A'
 
 # @igor_chubin
-alias we='curl wttr.in'
-alias wej="curl wttr.in/Tokyo\?lang=ja"
-alias weh="curl wttr.in/:help"
+# alias we='curl wttr.in'
+alias we='curl ja.wttr.in'
+# alias wej="curl wttr.in/Tokyo\?lang=ja"
+alias wej="curl ja.wttr.in/Tokyo"
+# alias weh="curl wttr.in/:help"
+alias weh="curl ja.wttr.in/:help"
 
 # covid
 alias covid='curl https://corona-stats.online'
 
 # cold
 alias gold='curl http://btc.rate.sx/paxg@10d'
+
+# tailscale
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
