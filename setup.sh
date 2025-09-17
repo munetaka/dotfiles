@@ -20,6 +20,7 @@
 brew install \
     arp-scan\
     boostnote\
+    coreutils\
     dropbox\
     gh\
     gibo\
@@ -27,7 +28,7 @@ brew install \
     gnu-sed\
     google-chrome\
     htop\
-    httpie
+    httpie\
     iproute2mac\
     iterm2\
     jq\
@@ -36,8 +37,8 @@ brew install \
     obsidian\
     neovim\
     nmap\
+    pipx\
     pyenv\
-    sequel-pro\
     sequel-ace\
     shellcheck\
     skitch\
