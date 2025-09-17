@@ -352,18 +352,18 @@ esac
 
 ## alias設定
 #
-[ -f ~/dotfiles/.zshrc.alias ] && source ~/dotfiles/.zshrc.alias
+[ -f "$ZDOTDIR"/.zshrc.alias ] && source "$ZDOTDIR"/.zshrc.alias
 
 case "${OSTYPE}" in
 # MacOSX
 darwin*)
     # ここに設定
-    [ -f ~/dotfiles/.zshrc.osx ] && source ~/dotfiles/.zshrc.osx
+    [ -f "$ZDOTDIR"/.zshrc.osx ] && source "$ZDOTDIR"/.zshrc.osx
     ;;
 # Linux
 linux*)
     # ここに設定
-    [ -f ~/dotfiles/.zshrc.linux ] && source ~/dotfiles/.zshrc.linux
+    [ -f "$ZDOTDIR"/.zshrc.linux ] && source "$ZDOTDIR"/.zshrc.linux
     ;;
 esac
 
@@ -375,3 +375,16 @@ esac
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# for pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+# Created by `pipx` on 2025-09-06 23:40:24
+export PATH="$PATH:/Users/munetaka.mizutani/.local/bin"
+
+fpath+=~/.zfunc
+autoload -Uz compinit && compinit
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
