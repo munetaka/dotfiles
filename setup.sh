@@ -22,6 +22,7 @@ brew install \
     boostnote\
     coreutils\
     dropbox\
+    eza\
     gh\
     gibo\
     git\

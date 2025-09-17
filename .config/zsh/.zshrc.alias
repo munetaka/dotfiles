@@ -1,10 +1,17 @@
 # ls
 case "${OSTYPE}" in
 darwin*)
-    alias ls="ls -GF"
-    alias la="ls -AGF"
-    alias ll="ls -hlGF"
-    alias lla="ls -hlAGF"
+    # alias ls="ls -GF"
+    # alias la="ls -AGF"
+    # alias ll="ls -hlGF"
+    # alias lla="ls -hlAGF"
+    alias ls="eza -F"
+    alias ll="eza -bghlHF --color-scale --icons --time-style=long-iso"
+    alias lla="eza -abghlHF --color-scale --icons --time-style=long-iso"
+    alias llg="eza -bghlHF --git --color-scale --icons --time-style=long-iso"
+    alias llag="eza -abghlHF --git --color-scale --icons --time-style=long-iso"
+    alias lt="eza -TL 2 --icons"
+    alias lta="eza -aTL 2 --icons"
     ;;
 linux*)
     alias ls='ls -F     --color'
