@@ -263,11 +263,11 @@ bindkey "^n" history-beginning-search-forward-end
 # bindkey "\\en" history-beginning-search-forward-end
 
 ## Command history configuration
-HISTFILE=~/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
+HISTFILE=$XDG_STATE_HOME/zsh/history
+(( HISTSIZE = (2 ** 31) - 1 ))   # Number of history can be saved in memory
+(( SAVEHIST = (2 ** 31) - 1 ))   # Number of history can be saved in HISTFILE
 setopt hist_ignore_dups # ignore duplication command history list
-setopt share_history # share command history data
+setopt inc_append_history        # Write to the history file immediastely, not when the shell exits.
 
 # 登録済コマンド行は古い方を削除
 setopt hist_ignore_all_dups
