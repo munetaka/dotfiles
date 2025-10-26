@@ -3,7 +3,7 @@
 # - https://github.com/feiskyer/codex-settings
 # - https://github.com/openai/codex/issues/2760
 
-apploval_policy = "untrusted"
+approval_policy = "untrusted"
 notify = ["bash", "-lc", "afplay /System/Library/Sounds/Glass.aiff"]
 network_access = false
 show_raw_agent_reasoning = true
@@ -19,6 +19,16 @@ exclude = ["AWS_*", "AZUER_*", "*TOKEN*", "*SECRET*", "*KEY*"]
 
 [tools]
 web_search = true
+
+[profiles.fast]
+model = "gpt-4o-mini"
+approval_policy = "never"
+model_reasoning_effort = "row"
+
+[profiles.reasoning]
+model = "o3"
+approval_policy = "on-failure"
+model_reasoning_effort = "high"
 
 [mcp_servers.chrome-devtools]
 command = "npx"
