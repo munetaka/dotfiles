@@ -1,0 +1,6 @@
+# Codex files
+auth.json
+history.jsonl
+sessions
+tmp
+version.json
