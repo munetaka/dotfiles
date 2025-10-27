@@ -1,0 +1,62 @@
+[project]
+name = "your-service"
+version = "0.1.0"
+requires-python = ">=3.11"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+# Ruff formatter を使用（Black不要）
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+
+[tool.ruff.lint]
+# 重要: コメントタグと出荷前取りこぼしの検出を有効化
+select = [
+  "F",        # Pyflakes
+  "E", "W",   # pycodestyle
+  "I",        # isort (import 並び替え)
+  "C90",      # mccabe (循環的複雑度)
+  "TD",       # TODO comment rules (TD001/2/3)
+  "FIX",      # FIXME / XXX 検出 (FIX002 など)
+]
+# プロジェクトの都合で除外したいルールがあればここで指定
+ignore = []
+
+# TODO / FIXME ルールの詳細（必要に応じて厳格化）
+[tool.ruff.lint.extend-select]
+# 例: 追加で Pydocstyle など入れたい場合は "D" を追記
+
+[tool.ruff.lint.per-file-ignores]
+# マイグレーション等の自動生成コードは厳しすぎるLintを緩和
+"**/migrations/*.py" = ["E501", "C901"]
+"**/alembic/*.py" = ["E501", "C901"]
+
+# TD ルールのオプション（著者・リンク必須など）
+[tool.ruff.lint.flake8-todos]
+# デフォルトでは TODO のフォーマット自由。
+# 厳格化したい場合は下記を true にする:
+# require-colon = true
+# require-issue = true
+# require-name = true
+
+# isort のスタイル
+[tool.ruff.lint.isort]
+known-first-party = ["your_service"]
+combine-as-imports = true
+force-sort-within-sections = true
+
+# mccabe
+[tool.ruff.lint.mccabe]
+max-complexity = 12
+
+# --- ty (type checker) 設定（必要に応じて） ---
+# ty は設定不要でも動作しますが、pyproject に置きたい場合の雛形です。
+[tool.ty]
+# 例: 除外ディレクトリ
+exclude = ["**/migrations/**", "**/.venv/**"]
+# 例: 型チェック対象（パスを列挙）
+paths = ["src", "tests"]
+

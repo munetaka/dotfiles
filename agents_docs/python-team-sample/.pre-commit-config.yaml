@@ -1,0 +1,30 @@
+repos:
+  # Ruff: フォーマット & Lint（最初に実行して早期フィードバック）
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9 # 使用する Ruff のバージョンに合わせて固定
+    hooks:
+      - id: ruff-format
+      - id: ruff-check
+        args: [--fix]  # 自動修正できるものは直す
+
+  # --- ty（type checker）: ローカルフックで uv 経由実行 ---
+  - repo: local
+    hooks:
+      - id: ty
+        name: ty (type checker)
+        entry: uv run ty
+        language: system
+        types: [python]
+        pass_filenames: false
+        # CI とローカルどちらでも動作。uv がプロジェクトにインストール済みであることが前提。
+
+      # 出荷前の TODO / FIXME 取りこぼしを更に厳格化したい場合の例
+      - id: forbid-leftover-todos
+        name: forbid leftover TODO/FIXME in release branches
+        entry: bash -c 'if git rev-parse --abbrev-ref HEAD | grep -E "^(main|master|release/)"; then ! git grep -nE "#\s*(TODO|FIXME)\b" -- ":!**/migrations/*" ; else exit 0; fi'
+        language: system
+        pass_filenames: false
+        stages: [commit, push]
+
+# 推奨: 初回は `uv sync` 実行後に `pre-commit install`
+
