@@ -23,7 +23,7 @@ web_search = true
 [profiles.fast]
 model = "gpt-4o-mini"
 approval_policy = "never"
-model_reasoning_effort = "row"
+model_reasoning_effort = "low"
 
 [profiles.reasoning]
 model = "o3"
