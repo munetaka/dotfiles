@@ -1,0 +1,47 @@
+name: TODO to Issue
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  sync-todos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # TODO/FIXME/HACK などを Issue に自動同期
+      - name: Create or Update Issues from TODOs
+        uses: alstr/todo-to-issue-action@v5
+        with:
+          REPO: ${{ github.repository }}
+          CLOSE_ISSUES: true          # コメントが消えた/解決されたらクローズ
+          AUTO_P: true                # 既存 Issue を更新
+          LABEL: "from TODO"
+          COMMENT_MARKER: "### Source"
+          INCLUDE_PATTERN: "(TODO|FIXME|HACK)"
+          EXCLUDE_PATTERN: "(migrations/|alembic/)"
+          # タイトル・本文のテンプレも調整可能
+          # TITLE_TEMPLATE: "[{filename}] {comment}"
+          # BODY_TEMPLATE: "Found in `{filename}`:{line}\n\n```\n{comment}\n```"
+
+      # 参考: Lint も同時に走らせたい場合（任意）
+      # - name: Set up Python
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version: "3.11"
+      # - name: Install uv
+      #   run: pipx install uv
+      # - name: Sync deps
+      #   run: uv sync
+      # - name: Ruff check
+      #   run: uv run ruff check .
+
