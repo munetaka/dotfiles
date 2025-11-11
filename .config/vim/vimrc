@@ -1,29 +1,35 @@
 "vunlde.vimで管理してるpluginを読み込む
 "source ~/dotfiles/.config/vim/.vimrc.bundle
 
+let s:vim_config_base = empty($XDG_CONFIG_PATH) ? '~/dotfiles/.config' : $XDG_CONFIG_PATH
+let s:vim_config_dir = expand(s:vim_config_base . '/vim')
+function! s:SourceConfig(file) abort
+  execute 'source ' . fnameescape(s:vim_config_dir . '/' . a:file)
+endfunction
+
 "基本設定
-source ~/dotfiles/.config/vim/.vimrc.basic
+call s:SourceConfig('.vimrc.basic')
 "dein.vimで管理してるpluginを読み込む
-source ~/dotfiles/.config/vim/.vimrc.dein
+call s:SourceConfig('.vimrc.dein')
 "StatusLine設定
-source ~/dotfiles/.config/vim/.vimrc.statusline
+call s:SourceConfig('.vimrc.statusline')
 "インデント設定
-source ~/dotfiles/.config/vim/.vimrc.indent
+call s:SourceConfig('.vimrc.indent')
 "表示関連
-source ~/dotfiles/.config/vim/.vimrc.apperance
+call s:SourceConfig('.vimrc.apperance')
 "補完関連
-source ~/dotfiles/.config/vim/.vimrc.completion
+call s:SourceConfig('.vimrc.completion')
 "Tags関連
-" source ~/dotfiles/.config/vim/.vimrc.tags
+" call s:SourceConfig('.vimrc.tags')
 "検索関連
-source ~/dotfiles/.config/vim/.vimrc.search
+call s:SourceConfig('.vimrc.search')
 "移動関連
-source ~/dotfiles/.config/vim/.vimrc.moving
+call s:SourceConfig('.vimrc.moving')
 "Color関連
-source ~/dotfiles/.config/vim/.vimrc.colors
+call s:SourceConfig('.vimrc.colors')
 "編集関連
-source ~/dotfiles/.config/vim/.vimrc.editing
+call s:SourceConfig('.vimrc.editing')
 "エンコーディング関連
-source ~/dotfiles/.config/vim/.vimrc.encoding
+call s:SourceConfig('.vimrc.encoding')
 "その他
-" source ~/dotfiles/.config/vim/.vimrc.misc
+" call s:SourceConfig('.vimrc.misc')

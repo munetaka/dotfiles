@@ -13,8 +13,12 @@ set wildmode=list:full     " リスト表示，最長マッチ
 " cnoremap <C-n> <Down>
 " cnoremap <Down>  <C-n>
 
+" 補完設定読み込み用パスをXDG準拠で解決
+let s:vim_config_base = empty($XDG_CONFIG_PATH) ? '~/dotfiles/.config' : $XDG_CONFIG_PATH
+let s:vim_config_dir = expand(s:vim_config_base . '/vim')
+
 " 補完にcomplcacheを使う
-source ~/dotfiles/.vimrc.completion.neocomplcache
+execute 'source ' . fnameescape(s:vim_config_dir . '/.vimrc.completion.neocomplcache')
 
 " 補完にAutoComplPopを使う
-" source ~/dotfiles/.vimrc.completion.autocomplpop
+" execute 'source ' . fnameescape(s:vim_config_dir . '/.vimrc.completion.autocomplpop')
