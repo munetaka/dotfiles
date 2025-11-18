@@ -5,7 +5,7 @@ darwin*)
     # alias la="ls -AGF"
     # alias ll="ls -hlGF"
     # alias lla="ls -hlAGF"
-    alias ls="eza -F"
+    alias ls="eza -F --icons"
     alias ll="eza -bghlHF --color-scale --icons --time-style=long-iso"
     alias lla="eza -abghlHF --color-scale --icons --time-style=long-iso"
     alias llg="eza -bghlHF --git --color-scale --icons --time-style=long-iso"
